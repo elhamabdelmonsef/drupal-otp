@@ -1,0 +1,6 @@
+otp_auth.settings:
+  title: 'OTP Auth Settings'
+  description: 'Configure OTP authentication settings.'
+  route_name: otp_auth.settings
+  parent: user.admin_index
+  weight: 100

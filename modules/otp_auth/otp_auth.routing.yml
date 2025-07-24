@@ -1,0 +1,16 @@
+otp_auth.settings:
+  path: '/admin/config/people/otp-auth'
+  defaults:
+    _form: 'Drupal\otp_auth\Form\OtpAuthSettingsForm'
+    _title: 'OTP Authentication Settings'
+  requirements:
+    _permission: 'administer site configuration'
+
+otp_auth.verify:
+  path: '/otp-verify'
+  defaults:
+    _controller: '\Drupal\otp_auth\Controller\OtpVerificationController::verifyPage'
+    _title: 'OTP Verification'
+  requirements:
+    _user_is_logged_in: 'TRUE'
+    

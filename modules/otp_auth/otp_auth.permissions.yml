@@ -1,0 +1,3 @@
+bypass otp verification:
+  title: 'Bypass OTP verification'
+  description: 'Allow user to bypass OTP verification step after login.'

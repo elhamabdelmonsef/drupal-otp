@@ -1,0 +1,21 @@
+services:
+  otp_auth.otp_service:
+    class: Drupal\otp_auth\Service\OtpService
+    arguments: ['@config.factory', '@logger.factory', '@plugin.manager.mail']
+
+  otp_auth.login_subscriber:
+    class: Drupal\otp_auth\EventSubscriber\LoginSubscriber
+    arguments: ['@current_user', '@request_stack', '@otp_auth.otp_service']
+    tags:
+      - { name: event_subscriber }
+  
+  otp_auth.otp_access_subscriber:
+    class: Drupal\otp_auth\EventSubscriber\OtpAccessSubscriber
+    arguments: ['@current_user', '@request_stack']
+    tags:
+      - { name: event_subscriber }
+
+  Drupal\otp_auth\Form\OtpVerificationForm:
+    arguments: ['@otp_auth.otp_service', '@current_user']
+    tags:
+      - { name: form }

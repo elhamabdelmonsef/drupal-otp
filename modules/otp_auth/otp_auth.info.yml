@@ -1,0 +1,9 @@
+name: OTP Authentication
+type: module
+description: 'Provides OTP verification after login.'
+core_version_requirement: ^10
+package: Custom
+dependencies:
+  - user
+  - mailsystem
+  - smtp
