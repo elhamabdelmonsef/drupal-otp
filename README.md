@@ -5,6 +5,20 @@
 
 This guide explains how to configure the **OTP Authentication** module in a Drupal project.
 
+## Documentation
+
+For a detailed architecture and technical documentation of the OTP Authentication module, please visit the internal Deepwiki page:
+
+📘 [Deepwiki – OTP Auth Module Documentation](https://deepwiki.com/elhamabdelmonsef/drupal-otp)
+
+This includes:
+- System architecture diagram
+- Module workflow and logic
+- Configuration examples
+- Troubleshooting tips
+
+---
+
 ![Configure OTP Settings](modules/otp_auth/screenshots/15.png)
 
 ---
