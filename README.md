@@ -1,12 +1,11 @@
 # 🔐 OTP Authentication Setup for Drupal
+**Author:** Elham Abdelmonsef  
+**Email:** elham.abdelmosef@gmail.com  
+**GitHub:** [@elhamabdelmonsef](https://github.com/elhamabdelmonsef)
 
 This guide explains how to configure the **OTP Authentication** module in a Drupal project.
 
-## 📸 Screenshot
-
-![OTP Authentication Screenshot](images/otp-login-form.png)
-
-> Replace the image path with your actual screenshot location if different.
+![Configure OTP Settings](otp_auth/screenshots/15.png)
 
 ---
 
@@ -21,24 +20,15 @@ This guide explains how to configure the **OTP Authentication** module in a Drup
    git clone <repository-url> /path/to/your/project
    cd /path/to/your/webserver-root
 
-3. **Enable the OTP Authentication Module**
-    From the top menu, go to:
-    Extend → Check OTP Authentication
-    It will automatically enable its dependencies:
-
-    Mail Manager
-
-    SMTP Authentication Support
-
-
-4. **Enable the OTP Authentication module**  
+3. **Enable the OTP Authentication module**  
    - Go to the top menu: **Extend**.  
    - Enable **OTP Authentication**.  
    - This will automatically enable the required dependencies:
      - Mail Manager
-     - SMTP Authentication Support
+     - SMTP Authentication Support4
+![Enable the OTP Authentication module](otp_auth/screenshots/5.png)
 
-5. **Install PHPMailer**  
+4. **Install PHPMailer**  
    Run the following command inside your project root:
    ```bash
    composer require phpmailer/phpmailer
@@ -49,6 +39,7 @@ This guide explains how to configure the **OTP Authentication** module in a Drup
    Then:
    - Set the **OTP Length** (e.g., 6)  
    - Set the **Expiration Time** in seconds (e.g., 300)
+![Configure OTP Settings](otp_auth/screenshots/8.png)
 
 7. **Configure the Mail System**  
    Go to:  
@@ -57,6 +48,7 @@ This guide explains how to configure the **OTP Authentication** module in a Drup
    - Default Mail System
    - Formatter
    - Sender
+![Configure OTP Settings](otp_auth/screenshots/9.png)
 
 8. **Configure SMTP Authentication**  
    Navigate to:  
@@ -66,27 +58,35 @@ This guide explains how to configure the **OTP Authentication** module in a Drup
    - SMTP Port (e.g., `2525` or `587`)
    - SMTP Username and Password
    - From Email Address
+![Configure OTP Settings](otp_auth/screenshots/11.png)
+![Configure OTP Settings](otp_auth/screenshots/10.png)
 
 9. **Add a Test User**  
     Go to:  
     `People > Add user`  
     - Create a user with a **valid email address** for testing.
+![Configure OTP Settings](otp_auth/screenshots/12.png)
 
 10. **Open the Website in an Incognito Window**  
     - Navigate to the login screen in a private/incognito browser window.
+![Configure OTP Settings](otp_auth/screenshots/14.png)
 
 11. **Login with Valid Credentials**  
     - Enter the test user's **username** and **password**.  
     - You will be redirected to the **OTP Verification** form.
+![Configure OTP Settings](otp_auth/screenshots/15.png)
 
 12. **Get the OTP Code**  
     - Check the user’s email inbox (e.g., via Mailtrap or your SMTP inbox),  
     - Or go to:  
-      `Administration > Reports` to find the OTP if it’s logged.
+      `Administration > Reports > Recent log messages` to find the OTP if it’s logged.
+![Configure OTP Settings](otp_auth/screenshots/16.png)
 
 13. **Enter the OTP Code**  
     - Input the OTP received via email.  
     - If correct, you’ll be logged in successfully.
+    - A numeric validation is applied both client and server side
+![Configure OTP Settings](otp_auth/screenshots/17.png)
 
 14. **OTP Verification Enforcement**  
     - If a user tries to visit any page **before verifying the OTP**,  
